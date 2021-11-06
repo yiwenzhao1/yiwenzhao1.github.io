@@ -1,0 +1,45 @@
+---
+title: "Plotly"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+This page is about making some plotly examples.
+
+```{r}
+library(tidyverse)
+library(p8105.datasets)
+
+library(plotly)
+```
+
+```{r}
+instacart %>% 
+  group_by(aisle) %>% 
+  count(aisle) %>%
+  arrange(desc(n)) 
+```
+
+## Plotly boxplot
+
+```{r, warning=FALSE}
+
+```
+
+```{r}
+
+```
+
+
+## Plotly Scatterplot
+
+```{r, warning=FALSE}
+
+```
+
+## Plotly Boxplot
+
+
+
