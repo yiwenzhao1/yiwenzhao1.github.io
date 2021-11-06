@@ -16,30 +16,49 @@ library(plotly)
 ```
 
 ```{r}
-instacart %>% 
-  group_by(aisle) %>% 
-  count(aisle) %>%
-  arrange(desc(n)) 
+data("instacart")
+
+instacart = 
+  instacart %>%
+  select(department, aisle, product_name, order_dow, order_hour_of_day, reordered)
 ```
 
-## Plotly boxplot
-
-```{r, warning=FALSE}
-
-```
+## Plotly bar chart
 
 ```{r}
-
+instacart %>% 
+  count(aisle) %>% 
+  mutate(aisle = fct_reorder(aisle, n)) %>% 
+  plot_ly(x = ~aisle, y = ~n, color = ~aisle, type = "bar", colors = "viridis")
 ```
-
 
 ## Plotly Scatterplot
 
-```{r, warning=FALSE}
-
+```{r}
+instacart %>%
+  count(aisle, department, order_hour_of_day) %>%
+  filter(
+    n <= 100000
+  ) %>%
+  plot_ly(
+    x = ~department, y = ~n, type = "scatter", mode = "markers", 
+    color = ~order_hour_of_day, alpha = 0.5
+  )
 ```
 
 ## Plotly Boxplot
 
+```{r}
+instacart %>%
+  count(aisle, department, order_hour_of_day) %>%
+  mutate(
+    aisle = fct_reorder(aisle, order_hour_of_day)
+  ) %>%
+  filter(
+    n <= 4000
+  ) %>%
+  plot_ly(y = ~n, color = ~department, type = "box", 
+          colors = "viridis")
+```
 
 
