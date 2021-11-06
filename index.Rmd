@@ -1,0 +1,23 @@
+---
+title: "Hw4 - My Awesome Website"
+output: 
+  html_document:
+    toc: true
+    toc_float: true
+---
+
+### This is Yiwen's awesome website
+
+<img src="images/image.jpg" style="width:70%">
+
+Hi!! Nice to meet you!
+
+My name is **Yiwen Zhao**, a graduate student majored in **Biostatistics** of **Columbia University**. 
+This is my first semester of master, and I am taking [p8105](https://www.p8105.com/) course right now.
+
+I like to watch **Broadway musicals** and here are some pictures of the musicals I've watched: 
+
+<img src="images/hamilton.jpg" style="width:40%">
+<img src="images/phantom.jpg" style="width:40%">
+
+**Here's my [academic and professional experience](about.html) page.**
